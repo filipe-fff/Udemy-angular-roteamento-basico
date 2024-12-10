@@ -4,10 +4,25 @@ import { SegundoComponent } from './components/segundo/segundo.component';
 import { BaseComponent } from './components/base/base.component';
 
 export const routes: Routes = [
-    { path: "componentes", component: BaseComponent },
-    { path: "componentes/primeiro", component: PrimeiroComponent },
-    { path: "componentes/segundo", component: SegundoComponent }
+    { 
+        path: "componentes",
+        loadComponent: () => import('./components/base/base.component').then((m) => m.BaseComponent)
+    },
+    { 
+        path: "componentes/primeiro",
+        loadComponent: () => import('./components/primeiro/primeiro.component').then((m) => m.PrimeiroComponent)
+    },
+    { 
+        path: "componentes/segundo",
+        loadComponent: () => import('./components/segundo/segundo.component').then((m) => m.SegundoComponent)
+    }
 ];
+
+// export const routes: Routes = [
+//     { path: "componentes", component: BaseComponent },
+//     { path: "componentes/primeiro", component: PrimeiroComponent },
+//     { path: "componentes/segundo", component: SegundoComponent }
+// ];
 
 // export const routes: Routes = [
 //     { path: "primeiro", component: PrimeiroComponent },
