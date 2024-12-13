@@ -2,8 +2,13 @@ import { Routes } from '@angular/router';
 import { PrimeiroComponent } from './components/primeiro/primeiro.component';
 import { SegundoComponent } from './components/segundo/segundo.component';
 import { BaseComponent } from './components/base/base.component';
+import { InicialComponent } from './components/inicial/inicial.component';
 
 export const routes: Routes = [
+    {
+        path: "",
+        component: InicialComponent
+    },
     { 
         path: "componentes",
         loadComponent: () => import('./components/base/base.component').then((m) => m.BaseComponent)
