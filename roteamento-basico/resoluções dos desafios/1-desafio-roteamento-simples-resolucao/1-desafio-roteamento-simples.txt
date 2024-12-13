@@ -1,0 +1,112 @@
+=======> styles.scss <=======
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+=======> app.component.html <=======
+
+<div class="menu">
+  <div class="menu__item">
+      <a class="menu__link menu__link--selected">Início</a>
+  </div>
+  <div class="menu__item">
+      <a class="menu__link">Informações</a>
+  </div>
+  <div class="menu__item">
+    <a class="menu__link menu__link--disabled">Contatos</a>
+  </div>
+  <div class="menu__item">
+    <a class="menu__link">Sobre</a>
+  </div>
+  <div class="menu__item">
+    <a class="menu__link">Sair</a>
+  </div>
+</div>
+
+=======> app.component.scss <=======
+
+.menu {
+    background-color: #333;
+    display: flex;
+
+    &__item {
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    &__link {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover:not(&--selected):not(&--disabled) {
+            background-color: #575757;
+            color: #fff;
+        }
+
+        &--selected {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        &--disabled {
+            background-color: #6a6a6a99;
+            color: rgba(169, 169, 169, 0.584);
+        }
+    }
+}
+
+
+=======> Requisitos do projeto: <=======
+
+- O menu deve ter cinco itens (Início, Informações, Contatos, Sobre e Sair).
+- Apenas o item selecionado deve ter o estilo de selecionado (verde).
+
+- Ao selecionar o item "Início" ele deve ficar ativado (verde).
+- Ao selecionar o item "Início", deverá ser redirecionado para o path root ("/").
+- Ao selecionar o item "Início", deverá ser mostrado o texto "Nenhuma rota está ativa.", verificando se os paths de "Informações", "Contatos", "Sobre" e "Sair" NÃO estão ativos.
+- O item de "Início" não carrega nenhum componente.
+- Ao selecionar o item "Início" todos os itens devem ficar HABILITADOS.
+
+- Ao selecionar o item "Informações" ele deve ficar ativado (verde).
+- Ao selecionar o item "Informações" deverá ser redirecionado para o path relacionado a esse item.
+- Ao selecionar o item "Informações" deverá ser carregado o componente relacionado a esse item.
+- O componente do item "Informações" deverá ser carregado via Lazy Loading.
+
+- Ao selecionar o item "Contatos" ele deve ficar ativado (verde).
+- Ao selecionar o item "Contatos" deverá ser redirecionado para o path relacionado a esse item.
+- Ao selecionar o item "Contatos" deverá ser carregado o componente relacionado a esse item.
+- O componente do item "Contatos" deverá ser carregado via Lazy Loading.
+
+- Ao selecionar o item "Sobre" ele deve ficar ativado (verde).
+- Ao selecionar o item "Sobre" deverá ser redirecionado para o path relacionado a esse item.
+- Ao selecionar o item "Sobre" deverá ser carregado o componente relacionado a esse item.
+- O componente do item "Sobre" deverá ser carregado via Lazy Loading.
+
+- Ao selecionar o item "Sair" ele deve ficar ativado (verde).
+- Ao selecionar o item "Sair" deverá ser redirecionado para o path relacionado a esse item.
+- Ao selecionar o item "Sair" deverá ser carregado o componente relacionado a esse item.
+- O componente do item "Sair" deverá ser carregado via Lazy Loading.
+- Ao selecionar o item "Sair" os itens "Informações", "Contatos" e "Sobre" deverão ficar DESABILITADOS.
+
+
+=======> Passo a passo: <=======
+
+1 - Gerar um novo projeto com o nome "1-desafio-roteamento-simples".
+2 - Passar os códigos do menu.
+3 - Criar todos os componentes necessários.
+4 - Criar todas as rotas necessárias com lazy loading.
+5 - Criar a lógica de redirecionamento utilizando o RouterLink.
+6 - Criar a lógica de carregamento dos componentes de acordo com a rota selecionada utilizando o RouterOutlet.
+7 - Criar a lógica de aplicar a classe CSS de selecionado para o item atualmente selecionado utilizando o RouterLinkActive.
+8 - Criar a lógica de aplicar a classe CSS de desabilitado ao selecionar o item "Sair".
+9 - Criar a lógica para bloquear o redirecionamento nos itens que estão desabilitados.
+10 - Criar a lógica para mostrar o texto "Nenhuma rota está ativa." ao clicar no item "Início".
+	- Fazer a verificação se os itens "Informações", "Contatos", "Sobre" e "Sair" não estão ativados, para mostrar o texto.
+
+
