@@ -3,6 +3,7 @@ import { PrimeiroComponent } from './components/primeiro/primeiro.component';
 import { SegundoComponent } from './components/segundo/segundo.component';
 import { BaseComponent } from './components/base/base.component';
 import { InicialComponent } from './components/inicial/inicial.component';
+import { PaginaNaoEncontradaComponent } from './components/pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,10 @@ export const routes: Routes = [
     { 
         path: "componentes/segundo",
         loadComponent: () => import('./components/segundo/segundo.component').then((m) => m.SegundoComponent)
+    },
+    {
+        path: "**",
+        component: PaginaNaoEncontradaComponent
     }
 ];
 
