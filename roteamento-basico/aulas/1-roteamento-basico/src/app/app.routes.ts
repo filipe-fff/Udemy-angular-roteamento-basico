@@ -4,6 +4,9 @@ import { SegundoComponent } from './components/segundo/segundo.component';
 import { BaseComponent } from './components/base/base.component';
 import { InicialComponent } from './components/inicial/inicial.component';
 import { PaginaNaoEncontradaComponent } from './components/pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { AppComponent } from './app.component';
+import { FilhoAComponent } from './components/primeiro/components/filho-a/filho-a.component';
+import { FilhoBComponent } from './components/primeiro/components/filho-b/filho-b.component';
 
 export const routes: Routes = [
     {
@@ -19,7 +22,19 @@ export const routes: Routes = [
     { 
         path: "componentes/primeiro",
         title: "Primeiro",
-        loadComponent: () => import('./components/primeiro/primeiro.component').then((m) => m.PrimeiroComponent)
+        component: PrimeiroComponent,
+        children: [
+            {
+                path: "filho-a",
+                title: "Filho A",
+                component: FilhoAComponent
+            },
+            {
+                path: "filho-b",
+                title: "Filho B",
+                component: FilhoBComponent
+            }
+        ]
     },
     { 
         path: "componentes/segundo",
