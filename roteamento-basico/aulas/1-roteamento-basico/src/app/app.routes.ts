@@ -8,22 +8,27 @@ import { PaginaNaoEncontradaComponent } from './components/pagina-nao-encontrada
 export const routes: Routes = [
     {
         path: "",
+        title: "Inicial",
         component: InicialComponent
     },
     { 
         path: "componentes",
+        title: "Componentes",
         loadComponent: () => import('./components/base/base.component').then((m) => m.BaseComponent)
     },
     { 
         path: "componentes/primeiro",
+        title: "Primeiro",
         loadComponent: () => import('./components/primeiro/primeiro.component').then((m) => m.PrimeiroComponent)
     },
     { 
         path: "componentes/segundo",
+        title: "Segundo",
         loadComponent: () => import('./components/segundo/segundo.component').then((m) => m.SegundoComponent)
     },
     {
         path: "**",
+        title: "Página não Encontrada",
         component: PaginaNaoEncontradaComponent
     }
 ];
