@@ -9,10 +9,16 @@ import { FilhoAComponent } from './components/primeiro/components/filho-a/filho-
 import { FilhoBComponent } from './components/primeiro/components/filho-b/filho-b.component';
 
 export const routes: Routes = [
+    // {
+    //     path: "",
+    //     title: "Inicial",
+    //     component: InicialComponent
+    // },
     {
         path: "",
-        title: "Inicial",
-        component: InicialComponent
+        redirectTo: "/componentes",
+        // redirectTo: "componentes",
+        pathMatch: "full"
     },
     { 
         path: "componentes",
@@ -25,7 +31,7 @@ export const routes: Routes = [
         component: PrimeiroComponent,
         children: [
             {
-                path: "filho-a",
+                path: "",
                 title: "Filho A",
                 component: FilhoAComponent
             },
@@ -33,6 +39,14 @@ export const routes: Routes = [
                 path: "filho-b",
                 title: "Filho B",
                 component: FilhoBComponent
+            },
+            {
+                path: "redirect-a",
+                redirectTo: ""
+            },
+            {
+                path: "redirect-b",
+                redirectTo: "filho-b"
             }
         ]
     },
