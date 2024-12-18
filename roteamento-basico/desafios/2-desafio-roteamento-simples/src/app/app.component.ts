@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ MatIcon, RouterOutlet],
+  imports: [ MatIcon, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

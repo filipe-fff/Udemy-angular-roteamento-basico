@@ -1,12 +1,15 @@
 <div class="general">
-    <div class="start__card">
-        <p class="start__card-title">Informações Gerais</p>
-        <p class="start__card-text">Você terá acesso as suas informações cadastrais.</p>
-        <button class="start__card-button">Acessar</button>
+<div class="general__menu">
+    <div class="general__menu-item" routerLink="basic" routerLinkActive="general__menu-item--selected">
+        Básica
     </div>
-    <div class="start__card">
-        <p class="start__card-title">Informações dos Cartões</p>
-        <p class="start__card-text">Você terá acesso as informações dos seus cartões de débito e crédito.</p>
-        <button class="start__card-button">Acessar</button>
+    <div class="general__menu-item" routerLink="contacts" routerLinkActive="general__menu-item--selected">
+        Contato
     </div>
+    <div class="general__menu-item" routerLink="address" routerLinkActive="general__menu-item--selected">
+        Endereço
+    </div>
+</div>
+<div class="general__content">
+    <router-outlet></router-outlet>
 </div>
