@@ -1,25 +1,27 @@
 <div class="container">
-  <div class="card">
-    <div class="card__side-menu">
-      <div class="menu__item" routerLink="./" routerLinkActive="menu__item--selected" [routerLinkActiveOptions]="{ exact: true }">
-        <span class="material-symbols-outlined menu__item-icon">
-          <mat-icon>home</mat-icon>
-        </span>
-        Início
+    <div class="card">
+      <div class="card__side-menu">
+        <div class="menu__item" routerLink="./" routerLinkActive="menu__item--selected" [routerLinkActiveOptions]="{ exact: true }">
+          <span class="material-symbols-outlined menu__item-icon">
+            <mat-icon>home</mat-icon>
+          </span>
+          Início
+        </div>
+        <div class="menu__item" routerLink="/general" routerLinkActive="menu__item--selected">
+          <span class="material-symbols-outlined menu__item-icon">
+            <mat-icon>person</mat-icon>
+          </span>
+          Geral
+        </div>
+        <div class="menu__item" routerLink="/transactions" routerLinkActive="menu__item--selected">
+          <span class="material-symbols-outlined menu__item-icon">
+            <mat-icon>credit_card</mat-icon>
+          </span>
+          Transações
+        </div>
       </div>
-      <div class="menu__item" routerLink="general" routerLinkActive="menu__item--selected">
-        <span class="material-symbols-outlined menu__item-icon">
-          <mat-icon>person</mat-icon>
-        </span>
-        Geral
+      <div class="card__content">
+        <router-outlet></router-outlet>
       </div>
-      <div class="menu__item" routerLink="transactions" routerLinkActive="menu__item--selected">
-        <span class="material-symbols-outlined menu__item-icon">
-          <mat-icon>credit_card</mat-icon>
-        </span>
-        Transações
-  </div>
-</div>
-<div class="card__content">
-  <router-outlet></router-outlet>
+    </div>
 </div>
