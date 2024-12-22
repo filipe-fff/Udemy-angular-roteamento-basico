@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { StartComponent } from './components/start/start.component';
 
 export const routes: Routes = [
     {
         path: "",
-        loadComponent: () => import('./components/start/start.component').then(m => m.StartComponent)
+        component: StartComponent
     },
     {
         path: "general",
@@ -15,6 +17,6 @@ export const routes: Routes = [
     },
     {
         path: "**",
-        loadComponent: () => import('./components/not-found/not-found.component').then(m => m.NotFoundComponent)
+        component: NotFoundComponent
     }
 ];
